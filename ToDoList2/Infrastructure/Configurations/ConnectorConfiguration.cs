@@ -16,6 +16,8 @@ namespace ToDoList2.Infrastructure.Configurations
 
             builder.Property(p => p.ConnectorId)
                    .IsRequired();
+
+
         }
     }
 }
