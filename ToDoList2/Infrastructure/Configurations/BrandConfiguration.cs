@@ -17,7 +17,6 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.Property(b => b.Address)
                    .IsRequired();
 
-
             builder.HasOne(b => b.Address)
                    .WithMany(p => p.Phone)
                    .HasForeignKey(p => p.BrandId);
