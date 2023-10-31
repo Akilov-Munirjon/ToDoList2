@@ -20,3 +20,4 @@ namespace ToDoList2.Infrastructure.Configurations
         }
     }
 }
+

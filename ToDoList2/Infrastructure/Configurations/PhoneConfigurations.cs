@@ -4,9 +4,9 @@ using ToDoList2.Domain.Entities.Models;
 
 namespace ToDoList2.Infrastructure.Configurations
 {
-    public class ConnectorConfiguration : IEntityTypeConfiguration<Connector>
+    public class PhoneConfiguration : IEntityTypeConfiguration<Phone>
     {
-        public void Configure(EntityTypeBuilder<Connector> builder)
+        public void Configure(EntityTypeBuilder<Phone> builder)
         {
             builder.HasKey(p => p.Id);
 
@@ -14,8 +14,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.Property(p => p.ConnectorId)
-                   .IsRequired();
+            builder.HasOne(p => p.Os)
+                   .WithMany(o => o.Phones)
+                   .HasForeignKey(p => p.OsId);
         }
     }
 }
