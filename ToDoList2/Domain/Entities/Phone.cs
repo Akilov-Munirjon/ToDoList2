@@ -41,7 +41,6 @@ namespace ToDoList2.Domain.Entities.Models
         public Os Os { get; set; }
         
         public Guid ConnectorId { get; set; }
-        public Connector Connector { get; set; }
 
         public Guid PhoneConnectorId { get; set; }
         public PhoneConnector PhoneConnector { get; set; }
