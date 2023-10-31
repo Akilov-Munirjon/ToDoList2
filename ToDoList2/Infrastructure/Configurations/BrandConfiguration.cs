@@ -14,9 +14,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            //builder.HasMany(b => b.Address)
-            //       .WithOne(p => p.Brand)
-            //       .HasForeignKey(p => p.BrandId);
+            builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.Brand)
+                  .HasForeignKey(p => p.BatteryId);
         }
     }
 }

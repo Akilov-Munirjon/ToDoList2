@@ -13,8 +13,8 @@ public class PhoneConnectorConfiguration : IEntityTypeConfiguration<PhoneConnect
                .HasMaxLength(100)
                .IsRequired();
 
-
-        builder.Property(p => p.PhoneConnectorId)
-               .IsRequired();
+        builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.PhoneConnector)
+                  .HasForeignKey(p => p.PhoneConnectorId);
     }
 }

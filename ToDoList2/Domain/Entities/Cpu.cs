@@ -6,7 +6,7 @@ namespace ToDoList2.Domain.Entities.Models
     {
         public string? Name { get; set; }
 
-        public ICollection<CpuPhone> CpuPhones { get; set; } = new List<CpuPhone>();
-       
+        public ICollection<Phone> Phones { get; set; } = new List<Phone>();
+
     }
 }

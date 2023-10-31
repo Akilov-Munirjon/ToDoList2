@@ -14,8 +14,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.Property(p => p.MemoryId)
-                   .IsRequired();
+            builder.HasMany(m => m.Phones)
+                  .WithOne(p => p.Memory)
+                  .HasForeignKey(p => p.MemoryId);
         }
     }
 }

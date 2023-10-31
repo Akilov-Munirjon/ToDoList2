@@ -17,6 +17,7 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.HasOne(p => p.Os)
                    .WithMany(o => o.Phones)
                    .HasForeignKey(p => p.OsId);
+
         }
     }
 }

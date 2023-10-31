@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ToDoList2.Domain.Entities;
 using ToDoList2.Domain.Entities.Models;
 
 namespace ToDoList2.Infrastructure.Configurations
 {
-    public class DisplayQualityConfiguration : IEntityTypeConfiguration<Display>
+    public class DisplayQualityConfiguration : IEntityTypeConfiguration<DisplayQuality>
     {
-        public void Configure(EntityTypeBuilder<Display> builder)
+        public void Configure(EntityTypeBuilder<DisplayQuality> builder)
         {
             builder.HasKey(p => p.Id);
 
@@ -14,8 +15,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.Property(p => p.DisplayQualityId)
-                   .IsRequired();
+            builder.HasMany(p => p.Phones)
+                  .WithOne(d => d.DisplayQuality)
+                  .HasForeignKey(p => p.DisplayQualityId);
         }
     }
 }

@@ -4,7 +4,7 @@ using ToDoList2.Domain.Entities.Models;
 
 namespace ToDoList2.Infrastructure.Configurations
 {
-    public class SimTypeConfiguration : IEntityTypeConfiguration<Simtype>
+    public class SimTypeConfiguration : IEntityTypeConfiguration<SimType>
     {
         public void Configure(EntityTypeBuilder<SimType> builder)
         {

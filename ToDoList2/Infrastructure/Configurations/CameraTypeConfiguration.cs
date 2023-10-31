@@ -15,8 +15,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.Property(p => p.CameraTypeId)
-                   .IsRequired();
+            builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.CameraType)
+                  .HasForeignKey(p => p.CameraTypeId);
         }
     }
 }

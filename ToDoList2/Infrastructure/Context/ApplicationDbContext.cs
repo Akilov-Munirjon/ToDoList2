@@ -13,8 +13,5 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-
-    public DbSet<Product> Products { get; set; }
-    public DbSet<Battery> Batteries { get; set; }
 }
 
