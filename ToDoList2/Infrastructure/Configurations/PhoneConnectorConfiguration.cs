@@ -9,7 +9,7 @@ public class PhoneConnectorConfiguration : IEntityTypeConfiguration<PhoneConnect
     {
         builder.HasKey(p => p.Id);
 
-        builder.Property(p => p.Name)
+        builder.Property(p => p.Phones)
                .HasMaxLength(100)
                .IsRequired();
 
