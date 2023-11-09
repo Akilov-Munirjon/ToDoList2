@@ -11,3 +11,4 @@ namespace ToDoList2.Domain.Entities
         public ICollection<Phone> Phones { get; set; } = new List<Phone>();
     }
 }
+ 

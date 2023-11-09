@@ -10,3 +10,4 @@ namespace ToDoList2.Domain.Entities.Models
         public ICollection<Phone> Phones { get; set; } = new List<Phone>();
     }
 }
+ 

@@ -19,4 +19,4 @@ namespace ToDoList2.Infrastructure.Configurations
                   .HasForeignKey(p => p.BatteryId);
         }
     }
-}
+} 

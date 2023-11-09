@@ -12,7 +12,7 @@ namespace ToDoList2.Domain.Entities.Models
         public Guid BrandId { get; set; }
         public Brand Brand { get; set; }
 
-        public Guid DisplayId { get; set; }
+        public Guid DisplayId { get; set; } 
         public Display Display { get; set; }
 
         public Guid CpuId { get; set; }

@@ -12,7 +12,7 @@ namespace ToDoList2.Infrastructure.Configurations
 
             builder.Property(p => p.Name)
                    .HasMaxLength(100)
-                   .IsRequired();
+                   .IsRequired(); 
 
             builder.HasMany(p => p.Phones)
                   .WithOne(p => p.Simtype)

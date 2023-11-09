@@ -16,5 +16,5 @@ public class DisplayConfiguration : IEntityTypeConfiguration<Display>
                   .WithOne(d => d.Display)
                   .HasForeignKey(p => p.DisplayId);
 
-    }
+    } 
 }
