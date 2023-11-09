@@ -6,16 +6,17 @@ namespace ToDoList2.Infrastructure.Configurations
 {
     public class SimTypeConfiguration : IEntityTypeConfiguration<Simtype>
     {
-        public void Configure(EntityTypeBuilder<SimType> builder)
+        public void Configure(EntityTypeBuilder<Simtype> builder)
         {
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Name)
                    .HasMaxLength(100)
-                   .IsRequired();
+                   .IsRequired(); 
 
-            builder.Property(p => p.SimTypeId)
-                   .IsRequired();
+            builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.Simtype)
+                  .HasForeignKey(p => p.Simtype);
         }
     }
 }

@@ -13,9 +13,11 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.Property(p => p.Name)
                    .HasMaxLength(100)
                    .IsRequired();
+             
+            builder.HasMany(p => p.Phones)
+                   .WithOne(p => p.Cpu)
+                   .HasForeignKey(p => p.CpuId);
 
-            builder.Property(p => p.CpuId)
-                   .IsRequired();
         }
     }
 }

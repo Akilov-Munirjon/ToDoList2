@@ -13,10 +13,11 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.Property(c => c.Name)
                    .HasMaxLength(100)
                    .IsRequired();
-
-            //builder.HasMany(c => c.CameraType)
-            //       .WithOne(p => p.Camera)
-            //       .HasForeignKey(p => p.CameraId);
+             
+            builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.Camera)
+                  .HasForeignKey(p => p.CameraId);
         }
     }
 }
+
