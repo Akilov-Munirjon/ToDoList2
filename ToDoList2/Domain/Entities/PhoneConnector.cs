@@ -6,9 +6,12 @@ namespace ToDoList2.Domain.Entities
     public class PhoneConnector : BaseEntity
     {
         public Guid PhoneId { get; set; }
-        public Guid ConnectorId { get; set; }
+       
+        public Connector Connector { get; set; }
 
-        public ICollection<Phone> Phones { get; set; } = new List<Phone>();
+        public Phone Phone { get; set; }
+
+        public Guid ConnectorId { get; set; }
     }
 }
  

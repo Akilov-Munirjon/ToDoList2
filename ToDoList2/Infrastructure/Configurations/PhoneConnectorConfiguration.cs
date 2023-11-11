@@ -9,13 +9,21 @@ public class PhoneConnectorConfiguration : IEntityTypeConfiguration<PhoneConnect
     {
         builder.HasKey(p => p.Id);
 
-        builder.Property(p => p.Phones)
+        builder.Property(p => p.PhoneId)
                .HasMaxLength(100)
                .IsRequired();
 
+        builder.Property(p => p.ConnectorId)
+               .HasMaxLength(100)
+               .IsRequired();
 
-        builder.HasMany(p => p.Phones)
-                  .WithOne(p => p.PhoneConnector)
-                  .HasForeignKey(p => p.PhoneConnectorId);
+        builder.HasOne(p => p.Phone)
+             .WithMany(p => p.PhoneConnector)
+             .HasForeignKey(p => p.PhoneId);
+
+        builder.HasOne(p => p.Connector)
+             .WithMany(p => p.PhoneConnector)
+             .HasForeignKey(p => p.ConnectorId);
+
     }
 }

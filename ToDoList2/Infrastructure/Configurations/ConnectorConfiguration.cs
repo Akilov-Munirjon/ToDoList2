@@ -14,9 +14,9 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.HasMany(p => p.Phones) 
-                  .WithOne(p => p.Connector)
-                  .HasForeignKey(p => p.ConnectorId);
+            builder.HasMany(c => c.PhoneConnector)
+                   .WithOne(c => c.Connector)
+                   .HasForeignKey(pc => pc.ConnectorId);
         }
     }
 }

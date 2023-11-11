@@ -7,6 +7,6 @@ namespace ToDoList2.Domain.Entities
     {
         public string Name { get; set; }
 
-        public ICollection<Phone> Phones { get; set; } = new List<Phone>(); 
+        public ICollection<Camera> Camera { get; set; } = new List<Camera>(); 
     }
 }
