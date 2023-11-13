@@ -12,7 +12,5 @@ public class DisplayConfiguration : IEntityTypeConfiguration<Display>
                .HasMaxLength(100)
                .IsRequired();
 
-        builder.Property(p => p.DisplayId)
-              .IsRequired();
-    }
+    } 
 }

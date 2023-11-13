@@ -14,8 +14,8 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.Property(p => p.OsId)
-               .IsRequired();
+            
         }
     }
 }
+

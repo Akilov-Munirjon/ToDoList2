@@ -4,7 +4,7 @@ using ToDoList2.Domain.Entities.Models;
 
 namespace ToDoList2.Infrastructure.Configurations
 {
-    public class SimTypeConfiguration : IEntityTypeConfiguration<Simtype>
+    public class SimTypeConfiguration : IEntityTypeConfiguration<SimType>
     {
         public void Configure(EntityTypeBuilder<SimType> builder)
         {
@@ -12,10 +12,11 @@ namespace ToDoList2.Infrastructure.Configurations
 
             builder.Property(p => p.Name)
                    .HasMaxLength(100)
-                   .IsRequired();
+                   .IsRequired(); 
 
-            builder.Property(p => p.SimTypeId)
-                   .IsRequired();
+            builder.HasMany(p => p.Phones)
+                  .WithOne(p => p.SimType)
+                  .HasForeignKey(p => p.SimTypeId);
         }
     }
 }
