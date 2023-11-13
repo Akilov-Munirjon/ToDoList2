@@ -17,9 +17,7 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.Property(b => b.Capacity)
                    .IsRequired();
              
-            builder.HasMany(p => p.Phones)
-                   .WithOne(p => p.Battery)
-                   .HasForeignKey(p => p.BatteryId);
+           
         }
     }
 }

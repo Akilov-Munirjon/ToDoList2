@@ -1,4 +1,5 @@
 ﻿using ToDoList2.Domain.Common.BaseEntities;
+using ToDoList2.Infrastructure.Configurations;
 
 namespace ToDoList2.Domain.Entities.Models
 {

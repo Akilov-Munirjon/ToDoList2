@@ -14,11 +14,6 @@ namespace ToDoList2.Infrastructure.Configurations
             builder.Property(p => p.Name)
                    .HasMaxLength(100)
                    .IsRequired();
-
-            builder.HasOne(p => p.Displayes)
-                  .WithMany(d => d.Phones)
-                  .HasForeignKey(p => p.DisplayQualityId);
-
         }
     }
 }

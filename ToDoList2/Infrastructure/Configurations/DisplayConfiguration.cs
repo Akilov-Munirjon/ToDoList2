@@ -12,9 +12,5 @@ public class DisplayConfiguration : IEntityTypeConfiguration<Display>
                .HasMaxLength(100)
                .IsRequired();
 
-        builder.HasMany(p => p.Phones)
-                  .WithOne(d => d.Display)
-                  .HasForeignKey(p => p.DisplayId);
-
     } 
 }

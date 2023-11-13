@@ -33,6 +33,6 @@ namespace ToDoList2.Domain.Entities.Models
         public Os Os { get; set; }
 
         public ICollection<PhoneConnector> PhoneConnector { get; set; } = new List<PhoneConnector>();
-
+       
     }
 }
