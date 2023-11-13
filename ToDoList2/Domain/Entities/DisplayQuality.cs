@@ -7,6 +7,6 @@ namespace ToDoList2.Domain.Entities
     {
         public string Name { get; set; }
 
-        public ICollection<Display> Displayes { get; set; } = new List<Display>(); 
+        public ICollection<Display> Displayes { get; set; } = new List<Display>();
     }
 }

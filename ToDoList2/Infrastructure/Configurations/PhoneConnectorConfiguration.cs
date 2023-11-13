@@ -13,17 +13,17 @@ public class PhoneConnectorConfiguration : IEntityTypeConfiguration<PhoneConnect
                .HasMaxLength(100)
                .IsRequired();
 
-        builder.Property(p => p.ConnectorId)
+        /*builder.Property(p => p.ConnectorId)
                .HasMaxLength(100)
-               .IsRequired();
+               .IsRequired();*/
 
         builder.HasOne(p => p.Phone)
              .WithMany(p => p.PhoneConnector)
              .HasForeignKey(p => p.PhoneId);
 
-        builder.HasOne(p => p.Connector)
+        /*builder.HasOne(p => p.Connector)
              .WithMany(p => p.PhoneConnector)
-             .HasForeignKey(p => p.ConnectorId);
+             .HasForeignKey(p => p.ConnectorId);*/
 
     }
 }

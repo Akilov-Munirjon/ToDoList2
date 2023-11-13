@@ -8,5 +8,6 @@ namespace ToDoList2.Domain.Entities.Models
         public float Size { get; set; }
 
         public ICollection<Phone> Phones { get; set; } = new List<Phone>(); 
+       
     }
 }

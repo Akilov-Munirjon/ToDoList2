@@ -14,13 +14,54 @@ namespace ToDoList2.Infrastructure.Configurations
                    .HasMaxLength(100)
                    .IsRequired();
 
-            builder.HasMany(p => p.PhoneConnector)
-                   .WithOne(o => o.Phone)
-                   .HasForeignKey(p => p.PhoneId);
+            builder.HasOne(p => p.Battery)
+                .WithMany(p => p.Phones)
+                .HasForeignKey(p =>p.BatteryId);
+
+
+            builder.HasOne(p => p.Brand)
+                .WithMany(p => p.Phones)
+                .HasForeignKey(p => p.BrandId);
+
+
+            builder.HasOne(p => p.Camera)
+               .WithMany(p => p.Phones)
+               .HasForeignKey(p => p.CameraId);
+
+
+            builder.HasOne(p => p.Cpu)
+                 .WithMany(c => c.Phones)
+                 .HasForeignKey(p => p.CpuId);
 
             builder.HasOne(d => d.Display)
                 .WithMany(d => d.Phones)
                 .HasForeignKey(d => d.DisplayId);
+
+
+            builder.HasOne(p => p.Memory)
+                 .WithMany(p => p.Phones)
+                 .HasForeignKey(p => p.MemoryId);
+
+
+            builder.HasOne(p => p.Os)
+                  .WithMany(p => p.Phones)
+                  .HasForeignKey(p => p.OsId);
+
+
+            builder.HasMany(p => p.PhoneConnector)
+                   .WithOne(o => o.Phone)
+                   .HasForeignKey(p => p.PhoneId);
+
+
+            builder.HasOne(p => p.SimType)
+                 .WithMany(p => p.Phones)
+                 .HasForeignKey(p => p.SimTypeId);
+
+
+
+
+
+
 
         }
     }

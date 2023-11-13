@@ -15,15 +15,10 @@ namespace ToDoList2.Infrastructure.Contexts
         public DbSet<Camera> Cameras { get; set; }
         public DbSet<CameraType> CameraTypes { get; set; }
         public DbSet<Connector> Connectors { get; set; }
-
         public DbSet<Cpu> Cpus { get; set; }
-
         public DbSet<Display> Displays { get; set; }
-
         public DbSet<DisplayQuality> DisplayQualityes { get; set; }
-
         public DbSet<Os> Os { get; set; }
-
         public DbSet<Memory> Memories { get; set; }
         public DbSet<SimType> SimTypes { get; set; }
         public DbSet<OperatingSystem> OperatingSystems { get; set; }
