@@ -21,7 +21,6 @@ namespace ToDoList2.Infrastructure.Contexts
         public DbSet<Os> Os { get; set; }
         public DbSet<Memory> Memories { get; set; }
         public DbSet<SimType> SimTypes { get; set; }
-        public DbSet<OperatingSystem> OperatingSystems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
