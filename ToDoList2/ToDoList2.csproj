@@ -40,6 +40,7 @@
     <Folder Include="Core\Common\Extensions\Controllers\" />
     <Folder Include="Domain\Enums\" />
     <Folder Include="Infrastructure\Migrations\" />
+    <Folder Include="new project\Новая папка\" />
   </ItemGroup>
 
 </Project>
