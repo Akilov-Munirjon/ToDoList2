@@ -1,36 +1,57 @@
 ﻿using MediatR;
 using static ToDoList2.new_project.Query;
 using ToDoList2.Domain.Entities.Models;
+using Amazon;
+using AutoMapper;
+using Profile = AutoMapper.Profile;
 
 namespace ToDoList2.new_project
 {
     public class IRequestHandler
     {
-        public class GetBatteryByIdQueryHandler : IRequestHandler<GetBatteryByIdQuery, BatteryDto>
+        private readonly IBatteryRepository _batteryRepository;
+        private readonly IMapper _mapper;
+
+        public GetBatteryByIdQueryHandler(IBatteryRepository batteryRepository, IMapper mapper)
         {
-            private readonly IBatteryRepository _batteryRepository;
-
-            public GetBatteryByIdQueryHandler(IBatteryRepository batteryRepository)
-            {
-                _batteryRepository = batteryRepository;
-            }
-
-            public async Task<BatteryDto> Handle(GetBatteryByIdQuery request, CancellationToken cancellationToken)
-            {
-                var battery = await _batteryRepository.GetById(request.Id);
-                return MapToDto(battery);
-            }
-
-            private BatteryDto MapToDto(Battery battery)
-            {
-                return new BatteryDto
-                {
-                    Id = battery.Id,
-                    Name = battery.Name,
-                    Capacity = battery.Capacity
-                };
-            }
-
+            _batteryRepository = batteryRepository;
+            _mapper = mapper;
         }
+
+        public async Task<BatteryDto> Handle(GetBatteryByIdQuery request, CancellationToken cancellationToken)
+        {
+            var battery = await _batteryRepository.GetById(request.Id);
+            return _mapper.Map<BatteryDto>(battery);
+        }
+
+        public class BatteryMappingProfile : Profile
+        {
+            public BatteryMappingProfile()
+            {
+                CreateMap<Battery, BatteryDto>();
+            }
+        }
+
+        //public class BatteryService
+        //{
+        //    private readonly IMapper _mapper;
+
+        //    public BatteryService()
+        //    {
+        //        var mapperConfig = new MapperConfiguration(cfg =>
+        //        {
+        //            cfg.AddProfile<BatteryMappingProfile>();
+        //        });
+
+        //        _mapper = new Mapper(mapperConfig);
+        //    }
+
+        //    private BatteryDto MapToDto(Battery battery)
+        //    {
+        //        return _mapper.Map<BatteryDto>(battery);
+        //    }
+        //}
+
+
     }
 }

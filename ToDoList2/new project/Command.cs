@@ -7,7 +7,7 @@ namespace ToDoList2.new_project
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
-        Guid IRequest<Guid>.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 
 }

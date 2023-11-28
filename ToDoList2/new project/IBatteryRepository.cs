@@ -7,3 +7,7 @@ namespace ToDoList2.new_project
         Task<Battery> GetById(Guid id);
     }
 }
+
+
+
+
