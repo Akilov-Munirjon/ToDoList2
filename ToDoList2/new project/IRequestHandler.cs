@@ -30,6 +30,7 @@ namespace ToDoList2.new_project
                     Capacity = battery.Capacity
                 };
             }
+
         }
     }
 }

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="new project\Новая папка\**" />
+    <Content Remove="new project\Новая папка\**" />
+    <EmbeddedResource Remove="new project\Новая папка\**" />
+    <None Remove="new project\Новая папка\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.7.300.6" />
     <PackageReference Include="Consul" Version="1.6.10.9" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
@@ -40,7 +47,6 @@
     <Folder Include="Core\Common\Extensions\Controllers\" />
     <Folder Include="Domain\Enums\" />
     <Folder Include="Infrastructure\Migrations\" />
-    <Folder Include="new project\Новая папка\" />
   </ItemGroup>
 
 </Project>
