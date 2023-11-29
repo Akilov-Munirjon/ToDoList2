@@ -32,25 +32,6 @@ namespace ToDoList2.new_project
             }
         }
 
-        //public class BatteryService
-        //{
-        //    private readonly IMapper _mapper;
-
-        //    public BatteryService()
-        //    {
-        //        var mapperConfig = new MapperConfiguration(cfg =>
-        //        {
-        //            cfg.AddProfile<BatteryMappingProfile>();
-        //        });
-
-        //        _mapper = new Mapper(mapperConfig);
-        //    }
-
-        //    private BatteryDto MapToDto(Battery battery)
-        //    {
-        //        return _mapper.Map<BatteryDto>(battery);
-        //    }
-        //}
 
 
     }
