@@ -1,7 +1,4 @@
-﻿using MediatR;
-using static ToDoList2.new_project.Query;
-using ToDoList2.Domain.Entities.Models;
-using Amazon;
+﻿using ToDoList2.Domain.Entities.Models;
 using AutoMapper;
 using Profile = AutoMapper.Profile;
 
