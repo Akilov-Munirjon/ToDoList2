@@ -1,6 +1,8 @@
-﻿namespace ToDoList2.Cqrs
+﻿using MediatR;
+
+namespace ToDoList2.Cqrs
 {
-    public class CreateUserCommand
+    public class CreateUserCommand : IRequest<Guid>
     {
         public string Username { get; set; }
         public string Email { get; set; }

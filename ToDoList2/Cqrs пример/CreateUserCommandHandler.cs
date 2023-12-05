@@ -1,24 +1,24 @@
-﻿using FluentValidation;
+﻿using MediatR;
 using System.Data.Entity;
-using ToDoList2.Cqrs;
 using ToDoList2.Cqrs_пример;
+using ToDoList2.Infrastructure.Contexts;
 
 namespace ToDoList2.Cqrs.CreatUserCommandHandler
 {
-    public class CreateUserCommandHandler
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid >
     {
-        private readonly DbContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
 
-        public CreateUserCommandHandler(DbContext dbContext)
+        public CreateUserCommandHandler(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
 
-        public void Handle(CreateUserCommand command)
+        public Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var validator = new CreateUserCommandValidator();
-            var validationResult = validator.Validate(command);
+            var validationResult = validator.Validate(request);
 
             if (!validationResult.IsValid)
             {
@@ -27,11 +27,9 @@ namespace ToDoList2.Cqrs.CreatUserCommandHandler
                 {
                     Console.WriteLine(error.ErrorMessage);
                 }
-                return;
             }
 
-            Console.WriteLine("Пользователь успешно создан!");
-            
+           return Task.FromResult(Guid.Empty);
         }
     }
 }

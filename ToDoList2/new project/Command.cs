@@ -1,4 +1,4 @@
-﻿using Amazon.Runtime.Internal;
+﻿using MediatR;
 
 namespace ToDoList2.new_project
 {
@@ -6,7 +6,6 @@ namespace ToDoList2.new_project
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
-        public Guid Id { get; set; }
     }
 
 }
