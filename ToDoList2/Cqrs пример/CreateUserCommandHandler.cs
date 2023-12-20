@@ -1,11 +1,10 @@
 ﻿using MediatR;
-using System.Data.Entity;
 using ToDoList2.Cqrs_пример;
 using ToDoList2.Infrastructure.Contexts;
 
 namespace ToDoList2.Cqrs.CreatUserCommandHandler
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid >
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
     {
         private readonly ApplicationDbContext _dbContext;
 
@@ -13,7 +12,6 @@ namespace ToDoList2.Cqrs.CreatUserCommandHandler
         {
             _dbContext = dbContext;
         }
-
 
         public Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {

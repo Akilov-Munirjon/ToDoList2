@@ -1,6 +1,4 @@
-﻿using ToDoList2.Domain.Entities.Models;
-using AutoMapper;
-using Profile = AutoMapper.Profile;
+﻿using AutoMapper;
 using MediatR;
 using ToDoList2.Infrastructure.Contexts;
 
