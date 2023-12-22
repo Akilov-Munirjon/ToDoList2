@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using ToDoList2.Domain.Entities.Models;
+using ToDoList2.test.Queries.GetCameraDetail;
 
 namespace ToDoList2.test.Mapping
 {
@@ -8,7 +10,8 @@ namespace ToDoList2.test.Mapping
         {
             public CameraMappingProfile()
             {
-                CreateMap<Camera, CameraDto>();
+                CreateMap<Camera, Camera>();
+                CreateMap<GetCameraDetailQueryHandler, GetCameraDetailQueryHandler>();
             }
         }
     }

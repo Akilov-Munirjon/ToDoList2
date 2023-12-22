@@ -2,7 +2,7 @@
 
 namespace ToDoList2.test
 {
-    public class GetCameraByIdQuery : IRequest<Guid>
+    public class GetAllCamerasQuery : IRequest<Guid>
     {
         public Guid Id { get; set; }
     }

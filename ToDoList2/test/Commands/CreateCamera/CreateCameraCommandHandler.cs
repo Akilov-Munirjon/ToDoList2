@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using ToDoList2.Domain.Entities.Models;
 using ToDoList2.Infrastructure.Contexts;
 
 namespace ToDoList2.test.Command.CreateCamera
@@ -19,7 +20,6 @@ namespace ToDoList2.test.Command.CreateCamera
         {
             var camera = _mapper.Map<Camera>(request);
 
-            _dbContext.Cameras.Add(camera);
 
             return Task.FromResult(Guid.Empty);
         }

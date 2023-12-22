@@ -6,5 +6,6 @@ namespace ToDoList2.test
     {
         public string Name { get; set; }
         public string Type { get; set; }
+        public Guid CameraTypeId { get; set; }
     }
 }
