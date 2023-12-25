@@ -20,7 +20,10 @@ namespace ToDoList2.test.Queries.GetAllCameras
         public async Task<List<Camera>> Handle(GetAllCamerasQuery request, CancellationToken cancellationToken)
         {
             var cameras = await _dbContext.Cameras.ToListAsync(cancellationToken);
-            return _mapper.Map<List<Camera>>(cameras);
+
+            var cameraDetails = _mapper.Map<List<Camera>>(cameras);
+
+            return cameraDetails;
         }
     }
 }

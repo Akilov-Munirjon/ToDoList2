@@ -18,12 +18,13 @@ namespace ToDoList2.test.Queries.GetCameraDetail
 
         public async Task<CameraDetail> Handle(GetCameraDetailQuery request, CancellationToken cancellationToken)
         {
+            var camera = await _dbContext.Cameras
+                .FirstOrDefaultAsync(c => c.Id == request.Id, cancellationToken);
 
-            var cameraDetail = _mapper.Map<CameraDetail>(request);
+            var cameraDetail = _mapper.Map<CameraDetail>(camera);
 
             return cameraDetail;
         }
     }
 }
-
 

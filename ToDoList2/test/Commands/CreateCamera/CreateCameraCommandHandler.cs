@@ -16,12 +16,15 @@ namespace ToDoList2.test.Command.CreateCamera
             _mapper = mapper;
         }
 
-        public Task<Guid> Handle(CreateCameraCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateCameraCommand request, CancellationToken cancellationToken)
         {
-            var camera = _mapper.Map<Camera>(request);
+            var Camera = _mapper.Map<Camera>(request);
 
+            _dbContext.Cameras.Add(Camera);
 
-            return Task.FromResult(Guid.Empty);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+
+            return Camera.Id;
         }
     }
 }
